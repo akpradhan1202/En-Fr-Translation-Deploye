@@ -17,7 +17,7 @@ def predict():
     For rendering results on HTML GUI
     '''
     en_sent = str(request.form.get("eng_sent"))
-    encode_data = convert_sent_encode(en_sent.strip())
+    encode_data = convert_sent_encode(en_sent.strip().lower())
     encode = encode_data.reshape(1,56,27)
     output = decode_sequence(encode,encode_model,decode_model)
         
